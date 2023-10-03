@@ -10,6 +10,20 @@ class Link(BaseMetadataModel):
     queryParams = models.CharField(max_length=255)
     hash = models.CharField(max_length=255)
     full_url = models.CharField(max_length=255)
+    counter = models.IntegerField(
+        default=0
+    )
+
+    def decompose_full_url(self):
+        """
+            @description: 
+        """
+        url = self.full_url
+        self.host = url.split('://')[1].split('/')[0]
+        self.path = '/' + '/'.join(url.split('://')[1].split('/')[1:])
+        self.queryParams = '?' + '&'.join(self.path.split('?')[1:]) if len(self.path.split('?')) > 1 else ''
+        self.hash = '#' + self.path.split('#')[1] if len(self.path.split('#')) > 1 else ''
+        self.path = self.path.split('?')[0].split('#')[0]
 
     def __str__(self):
         """
