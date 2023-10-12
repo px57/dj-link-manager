@@ -37,13 +37,12 @@ class LinkOpened(BaseMetadataModel):
     """
     profile = models.ForeignKey(
         'profiles.Profile', 
-        related_name='link_opened_profile',
+        # related_name='link_opened_profile',
         on_delete=models.CASCADE,
     )
 
     link = models.ForeignKey(
-        'Link', 
-        related_name='link_opened_link',
+        Link, 
         on_delete=models.CASCADE,
     )
 
@@ -55,4 +54,5 @@ class LinkOpened(BaseMetadataModel):
         """
             @description:
         """
-        return self.profile + self.link
+        # return self.profile + self.link
+        return str(self.profile) + str(self.link)
