@@ -43,9 +43,7 @@ def getUrlListOpened(url_list, dbProfile=None):
     for url in url_list:
         query |= Q(link__full_url=url)
 
-    print (query)
     if dbProfile is not None:
         query &= Q(profile=dbProfile)
     dbLinkOpened = LinkOpened.objects.filter(query)
-    print (dbLinkOpened)
     return dbLinkOpened
