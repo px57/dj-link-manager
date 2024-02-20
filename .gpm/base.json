@@ -1,0 +1,8 @@
+{
+    "base_path": "/var/projects/buzz/buzz-intern-server/link_manager/.gpm/base.json",
+    "gpm_path": "/var/projects/buzz/buzz-intern-server/link_manager/.gpm",
+    "name": "dj-link-manager",
+    "project_type": "module",
+    "repository_url": "https://github.com/px57/dj-link-manager.git",
+    "root_path": "/var/projects/buzz/buzz-intern-server/link_manager"
+}
