@@ -1,4 +1,4 @@
-from kernel.http import Response
+from gpm.http import Response
 from link_manager.models import Link, LinkOpened
 from link_manager.libs import setUrlOpened
 from profiles.decorators import load_profile
